@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import NewList, Newid, create_New, NewUpdate, NewDelete, SearchList
+from .views import NewList, Newid, NewCreate, NewUpdate, NewDelete, SearchList
 
 urlpatterns = [
 
@@ -7,7 +7,7 @@ urlpatterns = [
     path('new/<int:pk>', Newid.as_view(), name='news_id'),                 # переход по динамическим страницам
 
 
-    path('create/', create_New, name= 'create'),                           # переход на страницу добавления записи
+    path('create/', NewCreate, name= 'create'),                           # переход на страницу добавления записи
     path('<int:pk>/updata', NewUpdate.as_view(), name='updata'),
     path('<int:pk>/delete/', NewDelete.as_view(),name = 'delete'),
     path('search/', SearchList.as_view(), name='search'),
