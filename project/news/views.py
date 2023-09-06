@@ -46,7 +46,7 @@ class NewCreate(PermissionRequiredMixin,  CreateView):
 class NewUpdate(PermissionRequiredMixin, UpdateView):
     permission_required = ('news.change_record',)
     model = New
-    form_class = NewForm
+    form_class = NewForm                             # Для формы обновления, используем уже созданный класс RecordForm из form.py
     template_name = 'new/create.html'
     success_url = reverse_lazy('index')
 
